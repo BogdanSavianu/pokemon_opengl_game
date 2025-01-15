@@ -38,8 +38,7 @@ A 3D Pokemon world implementation using modern OpenGL, featuring dynamic animati
   - Strength: 3/4 keys
 - **View Shadow Map**: M key
 - **Pokemon Interactions**:
-  - Jump: Q key
-  - Spin: E key
+  - Spin and jump with the Q/E keys
 
 ## 🔧 Building the Project
 
