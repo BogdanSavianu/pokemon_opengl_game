@@ -86,6 +86,8 @@ target_link_libraries(Lab9
     ${SNDFILE_LIBRARY}
 )
 
+set_target_properties(${PROJECT_NAME} PROPERTIES OUTPUT_NAME "Pokemon")
+
 if(APPLE)
     target_compile_definitions(Lab9 PRIVATE
         GL_SILENCE_DEPRECATION
