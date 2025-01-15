@@ -87,3 +87,9 @@ external/downloads/
 
 # Shader preprocessor output
 *.spv.pp
+
+# Objects
+objects/
+
+# Executables
+Lab9

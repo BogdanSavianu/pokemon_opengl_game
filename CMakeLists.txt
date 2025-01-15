@@ -3,13 +3,11 @@ project(Lab9)
 
 set(CMAKE_CXX_STANDARD 20)
 
-# Add brew paths for macOS
 if(APPLE)
     include_directories(/usr/local/include /opt/homebrew/include)
     link_directories(/usr/local/lib /opt/homebrew/lib)
 endif()
 
-# Find OpenAL (platform specific)
 if(APPLE)
     find_library(OPENAL_LIBRARY OpenAL)
     set(OPENAL_INCLUDE_DIR "/System/Library/Frameworks/OpenAL.framework/Headers")
@@ -17,7 +15,6 @@ else()
     find_package(OpenAL REQUIRED)
 endif()
 
-# Find libsndfile
 if(APPLE)
     find_library(SNDFILE_LIBRARY sndfile)
     find_path(SNDFILE_INCLUDE_DIR sndfile.h
@@ -30,7 +27,6 @@ else()
     pkg_check_modules(SNDFILE REQUIRED sndfile)
 endif()
 
-# Include directories
 include_directories(
     ${PROJECT_SOURCE_DIR}
     ${OPENGL_INCLUDE_DIRS}
@@ -90,7 +86,6 @@ target_link_libraries(Lab9
     ${SNDFILE_LIBRARY}
 )
 
-# Disable deprecation warnings for OpenAL
 if(APPLE)
     target_compile_definitions(Lab9 PRIVATE
         GL_SILENCE_DEPRECATION
